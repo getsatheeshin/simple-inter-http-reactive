@@ -32,7 +32,7 @@ public class SimpleInterReactiveHttpResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("echo/{name}")
-    public Uni<EchoMO> echo(@PathParam String name) {
+    public Uni<EchoMO> echo(@PathParam("name") String name) {
         LOG.info("Echo "+name);
         final String local = name;
         return Uni.createFrom().emitter(em ->{
@@ -43,7 +43,7 @@ public class SimpleInterReactiveHttpResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("chain/{name}")
-    public Uni<EchoMO> chain(@PathParam String name) {
+    public Uni<EchoMO> chain(@PathParam("name") String name) {
         LOG.info("Chain "+name);
         final String local = name;
         return Uni.createFrom()

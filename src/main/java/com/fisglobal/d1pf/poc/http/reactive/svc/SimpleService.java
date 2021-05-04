@@ -1,9 +1,11 @@
 package com.fisglobal.d1pf.poc.http.reactive.svc;
 
 import com.fisglobal.d1pf.poc.http.reactive.model.EchoMO;
+import org.eclipse.microprofile.opentracing.Traced;
 
 import javax.enterprise.context.ApplicationScoped;
 
+@Traced
 @ApplicationScoped
 public class SimpleService {
 
